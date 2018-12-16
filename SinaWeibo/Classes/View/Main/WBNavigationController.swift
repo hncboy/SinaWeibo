@@ -37,8 +37,8 @@ class WBNavigationController: UINavigationController {
                     title = childViewControllers.first?.title ?? "返回"
                 }
                 
-                // 取出自定义的navItem
-                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToParent))
+                // 取出自定义的navItem，设置左侧按钮作为返回按钮
+                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToParent), isBack: true)
             }
         }
         

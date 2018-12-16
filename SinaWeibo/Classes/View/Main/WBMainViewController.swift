@@ -60,6 +60,10 @@ extension WBMainViewController {
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
+        // 4.设置tabbar的标题字体
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
+        //系统默认是12号字，修改字体大小，要设置Normal的字体大小
+        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12)], for: UIControlState(rawValue: 0))
         
         let nav = WBNavigationController(rootViewController: vc)
         return nav

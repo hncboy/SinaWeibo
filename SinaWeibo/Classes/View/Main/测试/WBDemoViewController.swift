@@ -31,6 +31,10 @@ extension WBDemoViewController {
     override func setupUI() {
         super.setupUI()
         // 设置右侧的控制器
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+        
+        let btn: UIButton = UIButton.cz_textButton("下一个", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
+        btn.addTarget(self, action: #selector(showNext), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
     }
 }

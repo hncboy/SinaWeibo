@@ -30,6 +30,7 @@
 		FEC154D221C53656007B9F5E /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC154C621C53656007B9F5E /* UIViewController+CZAddition.m */; };
 		FEC154D621C5F0F1007B9F5E /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */; };
 		FEC154D921C6471F007B9F5E /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC154D821C6471F007B9F5E /* WBDemoViewController.swift */; };
+		FEC154DB21C6506D007B9F5E /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC154DA21C6506D007B9F5E /* UIBarButtonItem+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		FEC154D321C53693007B9F5E /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Weibo-Bridge.h"; path = "../Weibo-Bridge.h"; sourceTree = "<group>"; };
 		FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
 		FEC154D821C6471F007B9F5E /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		FEC154DA21C6506D007B9F5E /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Extensions.swift"; path = "../../View/Main/测试/UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 		FEC154D421C5F0F1007B9F5E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FEC154DA21C6506D007B9F5E /* UIBarButtonItem+Extensions.swift */,
 				FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */,
 			);
 			path = Extensions;
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEC154CE21C53656007B9F5E /* UIColor+CZAddition.m in Sources */,
+				FEC154DB21C6506D007B9F5E /* UIBarButtonItem+Extensions.swift in Sources */,
 				FEC154C721C53656007B9F5E /* NSArray+Log.m in Sources */,
 				FEC154A221C4D699007B9F5E /* WBBaseViewController.swift in Sources */,
 				FEC154CF21C53656007B9F5E /* UILabel+CZAddition.m in Sources */,

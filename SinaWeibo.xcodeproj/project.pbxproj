@@ -28,6 +28,7 @@
 		FEC154D021C53656007B9F5E /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC154C221C53656007B9F5E /* UIScreen+CZAddition.m */; };
 		FEC154D121C53656007B9F5E /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC154C421C53656007B9F5E /* UIView+CZAddition.m */; };
 		FEC154D221C53656007B9F5E /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC154C621C53656007B9F5E /* UIViewController+CZAddition.m */; };
+		FEC154D621C5F0F1007B9F5E /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		FEC154C521C53656007B9F5E /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		FEC154C621C53656007B9F5E /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		FEC154D321C53693007B9F5E /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Weibo-Bridge.h"; path = "../Weibo-Bridge.h"; sourceTree = "<group>"; };
+		FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		FEC1549521C4D59B007B9F5E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FEC154D421C5F0F1007B9F5E /* Extensions */,
 				FEC154AD21C53656007B9F5E /* Additions */,
 			);
 			path = Tools;
@@ -228,6 +231,14 @@
 			path = Additions;
 			sourceTree = "<group>";
 		};
+		FEC154D421C5F0F1007B9F5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEC154D521C5F0F1007B9F5E /* Bundle+Extenstions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,6 +330,7 @@
 				FEC154D121C53656007B9F5E /* UIView+CZAddition.m in Sources */,
 				FEC154CB21C53656007B9F5E /* NSString+CZHash.m in Sources */,
 				FEC154A621C4D73B007B9F5E /* WBMessageViewController.swift in Sources */,
+				FEC154D621C5F0F1007B9F5E /* Bundle+Extenstions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

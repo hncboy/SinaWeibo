@@ -15,19 +15,47 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildControllers()
+        setupComposeButton()
     }
+    
+    // MARK: - 监听方法
+    /// 撰写微博
+    // FIXME: 没有实现
+    func composeStatus() {
+        print("撰写微博")
+    }
+    
+    // MARK: - 私有控件
+    /// 撰写按钮
+    lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 }
 // extension 类似OC中的分类， 在Swift中还可以用来切分代码块
 // 可以把相近功能的函数，放在一个extension中，便于代码维护，不能定义属性
 // MARK: - 设置界面
 extension WBMainViewController {
     
+    func setupComposeButton() {
+        tabBar.addSubview(composeButton)
+        // 计算按钮的宽度
+        let count = CGFloat(childViewControllers.count)
+        // 将向内缩紧的宽度减少，能够让按钮的宽度变大，盖住容错点，防止穿帮
+        let w = tabBar.bounds.width / count -  1
+        
+        // 正数向内缩进，负数向外扩展
+        composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+        print("撰写按钮宽度 \(composeButton.bounds.width)")
+        
+        // 按钮监听方法
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+    }
+    
     /// 设置所有子控制器
-     func setupChildControllers() {
+    func setupChildControllers() {
         
         let array = [
             ["clsName": "WBHomeViewController", "title": "首页", "imageName": "home"],
             ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center"],
+            ["clsName": "UIViewController"],
             ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "discover"],
             ["clsName": "WBProfileViewController", "title": "我", "imageName": "profile"]
         ]

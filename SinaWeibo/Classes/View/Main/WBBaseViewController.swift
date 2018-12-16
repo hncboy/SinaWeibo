@@ -13,12 +13,15 @@ class WBBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.cz_random()
+        setupUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
+
+// MARk: - 设置界面
+extension WBBaseViewController {
     
+    func setupUI() {
+       view.backgroundColor = UIColor.cz_random()
+    }
 }

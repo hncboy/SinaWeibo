@@ -13,23 +13,26 @@ class WBHomeViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /// 显示好友
+    func showFriends() {
+        print(#function)
+        let vc = WBDemoViewController()
+        // vc.hidesBottomBarWhenPushed = true //隐藏底部导航栏
+        // push 的动作是 nav 做的
+        navigationController?.pushViewController(vc, animated: true) //跳转页面
     }
-    */
+}
 
+// MARK: - 设置界面
+extension WBHomeViewController {
+    
+    // 重写父类的方法
+    override func setupUI() {
+        super.setupUI()
+        
+        //设置导航栏按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+    }
 }

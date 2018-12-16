@@ -32,6 +32,6 @@ extension WBDemoViewController {
         super.setupUI()
         
         // 设置右侧的控制器
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
     }
 }

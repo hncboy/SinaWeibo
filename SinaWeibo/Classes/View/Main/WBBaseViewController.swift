@@ -10,6 +10,9 @@ import UIKit
 
 class WBBaseViewController: UIViewController {
 
+    /// 表格视图 - 如果用户没有登录，就不创建
+    var tableView: UITableView?
+    
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
@@ -37,6 +40,11 @@ extension WBBaseViewController {
     func setupUI() {
        view.backgroundColor = UIColor.cz_random()
         
+        setupNavigationBar()
+    }
+    
+    /// 设置导航条
+    private func setupNavigationBar() {
         // 添加导航条
         view.addSubview(navigationBar)
         // 将item设置给bar

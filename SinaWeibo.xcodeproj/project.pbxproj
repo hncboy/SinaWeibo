@@ -87,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE9019A221C91456005630D8 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */,
+				FEC1549F21C4D64B007B9F5E /* WBNavigationController.swift */,
+			);
+			name = "主控制器";
+			sourceTree = "<group>";
+		};
 		FEC1546B21C26817007B9F5E = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC154D721C646EF007B9F5E /* 测试 */,
-				FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */,
-				FEC1549F21C4D64B007B9F5E /* WBNavigationController.swift */,
+				FE9019A221C91456005630D8 /* 主控制器 */,
 				FEC154A121C4D699007B9F5E /* WBBaseViewController.swift */,
 			);
 			path = Main;

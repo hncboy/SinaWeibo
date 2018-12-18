@@ -16,8 +16,11 @@ import UIKit
 // 2.extension中不能重写父类方法！重写父类方法，是子类的指责，扩展是对类的扩展
 
 class WBBaseViewController: UIViewController {
+    
     /// 表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
+    /// 刷新控件
+    var refreshControl: UIRefreshControl?
     
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
@@ -50,7 +53,10 @@ class WBBaseViewController: UIViewController {
 extension WBBaseViewController {
     
     func setupUI() {
-       view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.cz_random()
+        
+        // 取消自动缩进 - 隐藏导航栏会缩进20个点
+        automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
         setupTableView()
@@ -65,6 +71,19 @@ extension WBBaseViewController {
         tableView?.dataSource = self
         tableView?.delegate = self
         
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
+        
+        // 设置刷新控件
+        // 1>实例化控件
+        refreshControl = UIRefreshControl()
+        // 2>添加到表格视图
+        tableView?.addSubview(refreshControl!)
+        // 3>添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     /// 设置导航条

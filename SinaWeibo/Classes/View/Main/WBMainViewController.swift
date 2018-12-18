@@ -18,6 +18,19 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
     }
     
+    /**
+     portrait: 竖屏
+     landscape: 横屏
+     
+     - 设置支持的方向之后，当前的控制器及子控制器都会遵守这个方向
+     - 播放视频的话，用modal展现
+     */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
+    
     // MARK: - 监听方法
     /// 撰写微博
     // FIXME: 没有实现

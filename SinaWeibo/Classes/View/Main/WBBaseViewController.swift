@@ -41,6 +41,13 @@ extension WBBaseViewController {
        view.backgroundColor = UIColor.cz_random()
         
         setupNavigationBar()
+        setupTableView()
+    }
+    
+    /// 设置表格视图
+    private func setupTableView() {
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
     }
     
     /// 设置导航条

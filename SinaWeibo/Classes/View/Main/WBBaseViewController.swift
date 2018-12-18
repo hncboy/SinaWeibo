@@ -29,6 +29,7 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        loadData()
     }
 
     /// 重写title的setter方法
@@ -37,6 +38,11 @@ class WBBaseViewController: UIViewController {
         didSet {
             navItem.title = title
         }
+    }
+    
+    /// 加载数据 - 具体的实现由子类负责
+    func loadData() {
+        
     }
 }
 

@@ -19,8 +19,12 @@ class WBBaseViewController: UIViewController {
     
     /// 表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
+    
     /// 刷新控件
     var refreshControl: UIRefreshControl?
+    
+    /// 上拉刷新标记
+    var isPullup = false
     
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
@@ -111,5 +115,27 @@ extension WBBaseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 只保证无语法错误
         return UITableViewCell()
+    }
+    
+    /// 在显示最后一行的时候，做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1.判断indexPath是否是最后一行
+        // indexPath.section最大  /  indexPath.row最后一行
+        // 1>row
+        let row = indexPath.row
+        // 2>section
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        // 3>行数
+        let count = tableView.numberOfRows(inSection: section)
+        
+        // 如果是最后一行，且没有开始上拉刷新
+        if row == (count - 1) && !isPullup {
+            print("上拉刷新")
+        }
     }
 }

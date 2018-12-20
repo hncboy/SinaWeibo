@@ -73,8 +73,17 @@ extension WBMainViewController {
     /// 设置所有子控制器
     func setupChildControllers() {
         
+        // 从bundle加载配置的json
+        // 1.路径  2.加载NSData  3.反序列化转换成数组
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+            let data = NSData(contentsOfFile: path),
+            let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as! [[String: AnyObject]] else {
+            return
+        }
+       
+        
         // 界面的创建依赖网络的json
-        let array: [[String: AnyObject]] = [
+        /*let array: [[String: AnyObject]] = [
             ["clsName": "WBHomeViewController" as AnyObject, "title": "首页" as AnyObject, "imageName": "home" as AnyObject,
                 "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看有什么惊喜"] as AnyObject
             ],
@@ -88,18 +97,21 @@ extension WBMainViewController {
             ["clsName": "WBProfileViewController" as AnyObject, "title": "我" as AnyObject, "imageName": "profile" as AnyObject,
                 "visitorInfo": ["imageName": "visitordiscover_image_profile", "message": "登录后，你的微博、相册、个人资料会显示在这里，展示给别人看"] as AnyObject
             ]
-        ]
+        ]*/
         
         // 测试数据格式是否正确，转换成plist数据更加直观
         // (array as NSArray).write(toFile: "/Users/hncboy/Desktop/demo.plist", atomically: true)
         // 数组 -> json序列化
-        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        (data as NSData).write(toFile: "/Users/hncboy/Desktop/demo.json", atomically: true)
+        // let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        // (data as NSData).write(toFile: "/Users/hncboy/Desktop/demo.json", atomically: true)
         
+        // 遍历数组，循环创建控制器数组
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
         }
+        
+        // 设置tabBar的子控制器
         viewControllers = arrayM
     }
     

@@ -20,6 +20,9 @@ class WBBaseViewController: UIViewController {
     /// 用户登录标记
     var userLogin = false
     
+    /// 访客视图信息字典
+    var visitorInfoDictionary: [String: String]?
+    
     /// 表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
     
@@ -99,6 +102,9 @@ extension WBBaseViewController {
         
         let visitorView = WBVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        // 设置访客视图信息
+        visitorView.visitorInfo = visitorInfoDictionary
     }
     
     /// 设置导航条

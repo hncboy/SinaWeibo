@@ -26,6 +26,9 @@ class WBVisitorView: UIView {
     /// 图像视图
     lazy var iconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     
+    /// 遮罩图像
+    lazy var maskIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    
     /// 小房子
     lazy var houseIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     
@@ -61,6 +64,7 @@ extension WBVisitorView {
         
         // 1.添加控件
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(tipLabel)
         addSubview(registerButton)
@@ -170,5 +174,21 @@ extension WBVisitorView {
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0))
+        // 6>遮罩图像
+        // views: 定义VFL中的控件名称和实际名称映射关系
+        // metrics: 定义VFL中()指定的常数影射关系
+        let viewDict = ["maskIconView": maskIconView,
+                        "registerButton": registerButton] as [String : Any]
+        let metrics = ["spacing": -20]
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[maskIconView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDict))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[maskIconView]-(spacing)-[registerButton]",
+            options: [],
+            metrics: metrics,
+            views: viewDict))
     }
 }

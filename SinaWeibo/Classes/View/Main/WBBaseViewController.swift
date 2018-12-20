@@ -85,8 +85,9 @@ extension WBBaseViewController {
         userLogin ? setupTableView() : setupVisitorView()
     }
     
-    /// 设置表格视图
-    private func setupTableView() {
+    /// 设置表格视图 - 用户登录之后执行
+    /// 子类重写此方法，因为子类不需要关心用户登录之前的逻辑
+    func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
@@ -115,12 +116,16 @@ extension WBBaseViewController {
         let visitorView = WBVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
         
-        // 设置访客视图信息
+        // 1.设置访客视图信息
         visitorView.visitorInfo = visitorInfoDictionary
         
-        // 添加访客视图按钮的监听方法
+        // 2.添加访客视图按钮的监听方法
         visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        // 3.设置导航条按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     /// 设置导航条

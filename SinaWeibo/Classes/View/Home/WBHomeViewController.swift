@@ -78,9 +78,9 @@ extension WBHomeViewController {
 // MARK: - 设置界面
 extension WBHomeViewController {
     
-    // 重写父类的方法
-    override func setupUI() {
-        super.setupUI()
+    /// 重写父类的方法
+    override func setupTableView() {
+        super.setupTableView()
         
         // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))

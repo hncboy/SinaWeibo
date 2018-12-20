@@ -76,12 +76,22 @@ extension WBMainViewController {
         // 界面的创建依赖网络的json
         let array: [[String: AnyObject]] = [
             ["clsName": "WBHomeViewController" as AnyObject, "title": "首页" as AnyObject, "imageName": "home" as AnyObject,
-             "visitorInfo": ["imageName": "", "message": "哈哈"] as AnyObject],
-            ["clsName": "WBMessageViewController" as AnyObject, "title": "消息" as AnyObject, "imageName": "message_center" as AnyObject],
+             "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看有什么惊喜"] as AnyObject
+            ],
+            ["clsName": "WBMessageViewController" as AnyObject, "title": "消息" as AnyObject, "imageName": "message_center" as AnyObject,
+                 "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"] as AnyObject
+            ],
             ["clsName": "UIViewController" as AnyObject],
-            ["clsName": "WBDiscoverViewController" as AnyObject, "title": "发现" as AnyObject, "imageName": "discover" as AnyObject],
-            ["clsName": "WBProfileViewController" as AnyObject, "title": "我" as AnyObject, "imageName": "profile" as AnyObject]
+            ["clsName": "WBDiscoverViewController" as AnyObject, "title": "发现" as AnyObject, "imageName": "discover" as AnyObject,
+                 "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"] as AnyObject
+            ],
+            ["clsName": "WBProfileViewController" as AnyObject, "title": "我" as AnyObject, "imageName": "profile" as AnyObject,
+                 "visitorInfo": ["imageName": "visitordiscover_image_profile", "message": "登录后，你的微博、相册、个人资料会显示在这里，展示给别人看"] as AnyObject
+            ]
         ]
+        
+        // 测试数据格式是否正确，转换成plist数据更加直观
+        // (array as NSArray).write(toFile: "/Users/hncboy/Desktop/demo.plist", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {

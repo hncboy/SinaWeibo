@@ -76,17 +76,17 @@ extension WBMainViewController {
         // 界面的创建依赖网络的json
         let array: [[String: AnyObject]] = [
             ["clsName": "WBHomeViewController" as AnyObject, "title": "首页" as AnyObject, "imageName": "home" as AnyObject,
-             "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看有什么惊喜"] as AnyObject
+                "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看有什么惊喜"] as AnyObject
             ],
             ["clsName": "WBMessageViewController" as AnyObject, "title": "消息" as AnyObject, "imageName": "message_center" as AnyObject,
-                 "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"] as AnyObject
+                "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"] as AnyObject
             ],
             ["clsName": "UIViewController" as AnyObject],
             ["clsName": "WBDiscoverViewController" as AnyObject, "title": "发现" as AnyObject, "imageName": "discover" as AnyObject,
-                 "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"] as AnyObject
+                "visitorInfo": ["imageName": "visitordiscover_image_message", "message": "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"] as AnyObject
             ],
             ["clsName": "WBProfileViewController" as AnyObject, "title": "我" as AnyObject, "imageName": "profile" as AnyObject,
-                 "visitorInfo": ["imageName": "visitordiscover_image_profile", "message": "登录后，你的微博、相册、个人资料会显示在这里，展示给别人看"] as AnyObject
+                "visitorInfo": ["imageName": "visitordiscover_image_profile", "message": "登录后，你的微博、相册、个人资料会显示在这里，展示给别人看"] as AnyObject
             ]
         ]
         
@@ -104,11 +104,13 @@ extension WBMainViewController {
     /// - parameter dict: 信息字典[clsName, title, imageName]
     /// - returns: 子控制器
     private func controller(dict: [String: AnyObject]) -> UIViewController {
+        
         // 1.取得字典内容
         guard let clsName = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? WBBaseViewController.Type,
+            let visitorDict = dict["visitorInfo"] as? [String: String] else {
                 
                 return UIViewController()
         }
@@ -116,6 +118,9 @@ extension WBMainViewController {
         // 2.创建视图控制器
         let vc = cls.init()
         vc.title = title
+        
+        // 设置控制器的访客信息字典
+        vc.visitorInfoDictionary = visitorDict
         
         // 3.设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)

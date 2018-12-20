@@ -28,6 +28,8 @@ class WBVisitorView: UIView {
             if imageName == "" {
                 return
             }
+            
+            iconView.image = UIImage(named: imageName)
         }
     }
     

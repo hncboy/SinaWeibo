@@ -30,6 +30,10 @@ class WBVisitorView: UIView {
             }
             
             iconView.image = UIImage(named: imageName)
+            
+            // 其他控制器的访客视图不需要显示小房子和遮罩视图
+            houseIconView.isHidden = true
+            maskIconView.isHidden = true
         }
     }
     
@@ -93,6 +97,9 @@ extension WBVisitorView {
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        // 文本居中
+        tipLabel.textAlignment = .center
         
         // 2.取消autoresizing
         for v in subviews {

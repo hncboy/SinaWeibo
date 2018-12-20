@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE9019A521CB4346005630D8 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019A421CB4346005630D8 /* WBVisitorView.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE9019A421CB4346005630D8 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				FEC1549F21C4D64B007B9F5E /* WBNavigationController.swift */,
 			);
 			name = "主控制器";
+			sourceTree = "<group>";
+		};
+		FE9019A321CB430A005630D8 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				FE9019A421CB4346005630D8 /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 		FEC1546B21C26817007B9F5E = {
@@ -184,6 +194,7 @@
 			children = (
 				FEC154D721C646EF007B9F5E /* 测试 */,
 				FE9019A221C91456005630D8 /* 主控制器 */,
+				FE9019A321CB430A005630D8 /* VisitorView */,
 				FEC154A121C4D699007B9F5E /* WBBaseViewController.swift */,
 			);
 			path = Main;
@@ -334,6 +345,7 @@
 			files = (
 				FEC154DD21C664FC007B9F5E /* UIBarButtonItem+Extensions.swift in Sources */,
 				FEC154CE21C53656007B9F5E /* UIColor+CZAddition.m in Sources */,
+				FE9019A521CB4346005630D8 /* WBVisitorView.swift in Sources */,
 				FEC154C721C53656007B9F5E /* NSArray+Log.m in Sources */,
 				FEC154A221C4D699007B9F5E /* WBBaseViewController.swift in Sources */,
 				FEC154CF21C53656007B9F5E /* UILabel+CZAddition.m in Sources */,

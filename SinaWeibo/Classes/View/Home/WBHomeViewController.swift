@@ -19,10 +19,23 @@ class WBHomeViewController: WBBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        for i in 0..<15 {
-            // 将数据插入到数组的顶部
-            statusList.insert(i.description, at: 0)
-        }
+        print("开始加载数据")
+        
+        // 模拟延时加载数据
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+            
+            for i in 0..<15 {
+                // 将数据插入到数组的顶部
+                self.statusList.insert(i.description, at: 0)
+            }
+            
+            print("刷新表格")
+            // 结束刷新控件
+            self.refreshControl?.endRefreshing()
+            // 刷新表格
+            self.tableView?.reloadData()
+        })
+       
     }
     
     /// 显示好友

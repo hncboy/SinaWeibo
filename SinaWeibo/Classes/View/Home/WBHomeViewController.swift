@@ -19,6 +19,19 @@ class WBHomeViewController: WBBaseViewController {
     /// 加载数据
     override func loadData() {
         
+        // 用网络工具加载微博数据
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token": "2.00uAYETDxK1YXB9f69a8596bEEZzRC"]
+        
+        /*WBNetworkManager.shared.get(urlString, parameters: params, progress: nil,
+                                    success: { (_, json) in print(json) },
+                                    failure: {(_, error) in print("网络请求失败 \(error)")})*/
+
+        WBNetworkManager.shared.request(URLString: urlString, parameters: params as [String : AnyObject]) {
+            
+            (json, isSuccess) in print(json)
+        }
+        
         print("开始加载数据 \(WBNetworkManager.shared)")
         
         // 模拟延时加载数据

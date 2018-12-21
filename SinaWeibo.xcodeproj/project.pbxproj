@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6242D8C86B3FC6EA24940844 /* Pods_SinaWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA0CA7E132BA07C6C9442B0 /* Pods_SinaWeibo.framework */; };
 		FE9019A521CB4346005630D8 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019A421CB4346005630D8 /* WBVisitorView.swift */; };
 		FE9019A721CB86D2005630D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = FE9019A621CB86D2005630D8 /* main.json */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
@@ -36,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71C41F09AC7D0778D28E36F1 /* Pods-SinaWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo/Pods-SinaWeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		8AC7EFE8A33A12B35F6B94CE /* Pods-SinaWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo/Pods-SinaWeibo.release.xcconfig"; sourceTree = "<group>"; };
+		BEA0CA7E132BA07C6C9442B0 /* Pods_SinaWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9019A421CB4346005630D8 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		FE9019A621CB86D2005630D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,12 +89,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6242D8C86B3FC6EA24940844 /* Pods_SinaWeibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0364588642C1C2BEA92E3D8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEA0CA7E132BA07C6C9442B0 /* Pods_SinaWeibo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61611B175B962090310AE04A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71C41F09AC7D0778D28E36F1 /* Pods-SinaWeibo.debug.xcconfig */,
+				8AC7EFE8A33A12B35F6B94CE /* Pods-SinaWeibo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FE9019A221C91456005630D8 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +136,8 @@
 			children = (
 				FEC1547621C26817007B9F5E /* SinaWeibo */,
 				FEC1547521C26817007B9F5E /* Products */,
+				61611B175B962090310AE04A /* Pods */,
+				0364588642C1C2BEA92E3D8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEC1548621C26817007B9F5E /* Build configuration list for PBXNativeTarget "SinaWeibo" */;
 			buildPhases = (
+				11750FF25C7FE3B13AB119E1 /* [CP] Check Pods Manifest.lock */,
 				FEC1547021C26817007B9F5E /* Sources */,
 				FEC1547121C26817007B9F5E /* Frameworks */,
 				FEC1547221C26817007B9F5E /* Resources */,
+				A02D80B881A120E9A230E973 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,6 +367,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11750FF25C7FE3B13AB119E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SinaWeibo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A02D80B881A120E9A230E973 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo/Pods-SinaWeibo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo/Pods-SinaWeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FEC1547021C26817007B9F5E /* Sources */ = {
@@ -470,6 +553,7 @@
 		};
 		FEC1548721C26817007B9F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C41F09AC7D0778D28E36F1 /* Pods-SinaWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -486,6 +570,7 @@
 		};
 		FEC1548821C26817007B9F5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AC7EFE8A33A12B35F6B94CE /* Pods-SinaWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

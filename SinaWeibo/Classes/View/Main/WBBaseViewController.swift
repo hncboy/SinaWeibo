@@ -18,7 +18,7 @@ import UIKit
 class WBBaseViewController: UIViewController {
     
     /// 用户登录标记
-    var userLogin = false
+    var userLogin = true
     
     /// 访客视图信息字典
     var visitorInfoDictionary: [String: String]?

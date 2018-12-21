@@ -10,6 +10,7 @@
 		6242D8C86B3FC6EA24940844 /* Pods_SinaWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA0CA7E132BA07C6C9442B0 /* Pods_SinaWeibo.framework */; };
 		FE9019A521CB4346005630D8 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019A421CB4346005630D8 /* WBVisitorView.swift */; };
 		FE9019A721CB86D2005630D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = FE9019A621CB86D2005630D8 /* main.json */; };
+		FE9019C821CC8E2F005630D8 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019C721CC8E2F005630D8 /* WBNetworkManager.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -42,6 +43,7 @@
 		BEA0CA7E132BA07C6C9442B0 /* Pods_SinaWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9019A421CB4346005630D8 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		FE9019A621CB86D2005630D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		FE9019C721CC8E2F005630D8 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			path = VisitorView;
 			sourceTree = "<group>";
 		};
+		FE9019C621CC8E01005630D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FE9019C721CC8E2F005630D8 /* WBNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FEC1546B21C26817007B9F5E = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +192,7 @@
 		FEC1549521C4D59B007B9F5E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FE9019C621CC8E01005630D8 /* Network */,
 				FEC154D421C5F0F1007B9F5E /* Extensions */,
 				FEC154AD21C53656007B9F5E /* Additions */,
 			);
@@ -374,15 +385,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SinaWeibo-checkManifestLockResult.txt",
 			);
@@ -396,8 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo/Pods-SinaWeibo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
@@ -408,8 +413,6 @@
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -443,6 +446,7 @@
 				FEC154D921C6471F007B9F5E /* WBDemoViewController.swift in Sources */,
 				FEC154A821C4D773007B9F5E /* WBDiscoverViewController.swift in Sources */,
 				FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */,
+				FE9019C821CC8E2F005630D8 /* WBNetworkManager.swift in Sources */,
 				FEC154CD21C53656007B9F5E /* UIButton+CZAddition.m in Sources */,
 				FEC154D021C53656007B9F5E /* UIScreen+CZAddition.m in Sources */,
 				FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */,

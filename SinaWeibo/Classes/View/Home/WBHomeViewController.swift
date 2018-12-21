@@ -19,7 +19,7 @@ class WBHomeViewController: WBBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        print("开始加载数据")
+        print("开始加载数据 \(WBNetworkManager.shared)")
         
         // 模拟延时加载数据
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {

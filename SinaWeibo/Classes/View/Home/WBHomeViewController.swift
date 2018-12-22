@@ -13,34 +13,12 @@ private let cellId = "cellId"
 
 class WBHomeViewController: WBBaseViewController {
 
-    /// 微博数据数组
-    var statusList = [String]()
+    var listViewModel = WBStatusListViewModel()
     
     /// 加载数据
     override func loadData() {
         
-        // 用网络工具加载微博数据
-        WBNetworkManager.shared.statusList {(list, isSuccess) in
-            
-            // 字典转模型，绑定表格数据
-            print(list)
-        }
-        
-        print("开始加载数据 \(WBNetworkManager.shared)")
-        
-        // 模拟延时加载数据
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-            
-            for i in 0..<15 {
-                if self.isPullup {
-                    // 将数据追加到底部
-                    self.statusList.append("上拉 \(i)")
-                } else {
-                    // 将数据插入到数组的顶部
-                    self.statusList.insert(i.description, at: 0)
-                }
-            }
-            
+        listViewModel.loadStatus{ (isSuccess) in
             print("加载数据结束")
             
             // 结束刷新控件
@@ -51,8 +29,7 @@ class WBHomeViewController: WBBaseViewController {
             
             // 刷新表格
             self.tableView?.reloadData()
-        })
-       
+        }
     }
     
     /// 显示好友
@@ -69,14 +46,14 @@ class WBHomeViewController: WBBaseViewController {
 extension WBHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 1.取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         // 2.设置cell
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         // 3.返回cell
         return cell
     }

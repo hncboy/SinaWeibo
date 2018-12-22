@@ -12,6 +12,7 @@
 		FE9019A721CB86D2005630D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = FE9019A621CB86D2005630D8 /* main.json */; };
 		FE9019C821CC8E2F005630D8 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019C721CC8E2F005630D8 /* WBNetworkManager.swift */; };
 		FE9019CA21CCA00C005630D8 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019C921CCA00C005630D8 /* WBNetworkManager+Extension.swift */; };
+		FE9019CC21CD08C3005630D8 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CB21CD08C3005630D8 /* WBStatus.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -46,6 +47,7 @@
 		FE9019A621CB86D2005630D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		FE9019C721CC8E2F005630D8 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		FE9019C921CCA00C005630D8 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		FE9019CB21CD08C3005630D8 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		FEC1549421C4D59B007B9F5E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE9019CB21CD08C3005630D8 /* WBStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				FE9019A521CB4346005630D8 /* WBVisitorView.swift in Sources */,
 				FEC154C721C53656007B9F5E /* NSArray+Log.m in Sources */,
 				FEC154A221C4D699007B9F5E /* WBBaseViewController.swift in Sources */,
+				FE9019CC21CD08C3005630D8 /* WBStatus.swift in Sources */,
 				FEC154CF21C53656007B9F5E /* UILabel+CZAddition.m in Sources */,
 				FEC154C821C53656007B9F5E /* NSAttributedString+CZAdditon.m in Sources */,
 				FEC154D221C53656007B9F5E /* UIViewController+CZAddition.m in Sources */,

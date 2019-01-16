@@ -17,9 +17,6 @@ import UIKit
 
 class WBBaseViewController: UIViewController {
     
-    /// 用户登录标记
-    var userLogin = true
-    
     /// 访客视图信息字典
     var visitorInfoDictionary: [String: String]?
     
@@ -42,7 +39,8 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        loadData()
+        
+        WBNetworkManager.shared.userLogin ? loadData() : ()
     }
 
     /// 重写title的setter方法
@@ -82,7 +80,7 @@ extension WBBaseViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
-        userLogin ? setupTableView() : setupVisitorView()
+        WBNetworkManager.shared.userLogin ? setupTableView() : setupVisitorView()
     }
     
     /// 设置表格视图 - 用户登录之后执行

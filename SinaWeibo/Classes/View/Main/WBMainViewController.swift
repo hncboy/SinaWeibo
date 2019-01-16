@@ -106,10 +106,14 @@ extension WBMainViewController {
     /// 定义时钟
     func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func updateTimer() {
+        
+        if !WBNetworkManager.shared.userLogin {
+            return
+        }
         
         WBNetworkManager.shared.unreadCount { (count) in
             

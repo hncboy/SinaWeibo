@@ -52,6 +52,10 @@ class WBMainViewController: UITabBarController {
     // MARK: - 监听方法
     func userLogin(n: Notification) {
         print("用户登录通知 \(n)")
+        
+        // 展现登录控制器 - 通常会和UINavigationController连用，方便返回
+        let nav = UINavigationController(rootViewController: WBOAuthViewController())
+        present(nav, animated: true, completion: nil)
     }
     
     

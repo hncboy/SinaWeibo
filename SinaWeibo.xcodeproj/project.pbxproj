@@ -15,6 +15,7 @@
 		FE9019CC21CD08C3005630D8 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CB21CD08C3005630D8 /* WBStatus.swift */; };
 		FE9019CE21CE0394005630D8 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CD21CE0394005630D8 /* WBStatusListViewModel.swift */; };
 		FE9019D021EFE3D6005630D8 /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CF21EFE3D6005630D8 /* WeiBoCommon.swift */; };
+		FE9019D321EFEC0F005630D8 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019D221EFEC0F005630D8 /* WBOAuthViewController.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -52,6 +53,7 @@
 		FE9019CB21CD08C3005630D8 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		FE9019CD21CE0394005630D8 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		FE9019CF21EFE3D6005630D8 /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
+		FE9019D221EFEC0F005630D8 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FE9019D121EFEBC2005630D8 /* oAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FE9019D221EFEC0F005630D8 /* WBOAuthViewController.swift */,
+			);
+			path = oAuth;
+			sourceTree = "<group>";
+		};
 		FEC1546B21C26817007B9F5E = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		FEC1549921C4D59B007B9F5E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE9019D121EFEBC2005630D8 /* oAuth */,
 				FEC154D721C646EF007B9F5E /* 测试 */,
 				FE9019A221C91456005630D8 /* 主控制器 */,
 				FE9019A321CB430A005630D8 /* VisitorView */,
@@ -473,6 +484,7 @@
 				FEC154CC21C53656007B9F5E /* NSString+CZPath.m in Sources */,
 				FEC154D121C53656007B9F5E /* UIView+CZAddition.m in Sources */,
 				FEC154CB21C53656007B9F5E /* NSString+CZHash.m in Sources */,
+				FE9019D321EFEC0F005630D8 /* WBOAuthViewController.swift in Sources */,
 				FEC154A621C4D73B007B9F5E /* WBMessageViewController.swift in Sources */,
 				FEC154D621C5F0F1007B9F5E /* Bundle+Extenstions.swift in Sources */,
 			);

@@ -14,6 +14,7 @@
 		FE9019CA21CCA00C005630D8 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019C921CCA00C005630D8 /* WBNetworkManager+Extension.swift */; };
 		FE9019CC21CD08C3005630D8 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CB21CD08C3005630D8 /* WBStatus.swift */; };
 		FE9019CE21CE0394005630D8 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CD21CE0394005630D8 /* WBStatusListViewModel.swift */; };
+		FE9019D021EFE3D6005630D8 /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019CF21EFE3D6005630D8 /* WeiBoCommon.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -50,6 +51,7 @@
 		FE9019C921CCA00C005630D8 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		FE9019CB21CD08C3005630D8 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		FE9019CD21CE0394005630D8 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
+		FE9019CF21EFE3D6005630D8 /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				FE9019C621CC8E01005630D8 /* Network */,
 				FEC154D421C5F0F1007B9F5E /* Extensions */,
 				FEC154AD21C53656007B9F5E /* Additions */,
+				FE9019CF21EFE3D6005630D8 /* WeiBoCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				FE9019CE21CE0394005630D8 /* WBStatusListViewModel.swift in Sources */,
 				FEC154C921C53656007B9F5E /* NSObject+CZRuntime.m in Sources */,
 				FEC154A021C4D64B007B9F5E /* WBNavigationController.swift in Sources */,
+				FE9019D021EFE3D6005630D8 /* WeiBoCommon.swift in Sources */,
 				FEC154AC21C4DACF007B9F5E /* WBHomeViewController.swift in Sources */,
 				FEC154CC21C53656007B9F5E /* NSString+CZPath.m in Sources */,
 				FEC154D121C53656007B9F5E /* UIView+CZAddition.m in Sources */,

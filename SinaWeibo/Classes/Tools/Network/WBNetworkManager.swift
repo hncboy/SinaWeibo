@@ -25,6 +25,8 @@ class WBNetworkManager: AFHTTPSessionManager {
     /// 访问令牌，所有的网络请求，都基于此令牌(登录除外)
     /// 为了保护用户安全，token是有时限的，默认用户是三天
     var accessToken: String? = "2.00uAYETDpFN57B8e5f0d2beb0PP3Ee"
+    /// 用户微博id
+    var uid: String? = "3177996304"
     
     /// 专门负责拼接token的网络请求方法
     func tokenRequest(method: WBHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?,

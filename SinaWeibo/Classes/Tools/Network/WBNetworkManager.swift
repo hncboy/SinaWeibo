@@ -24,7 +24,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     
     /// 访问令牌，所有的网络请求，都基于此令牌(登录除外)
     /// 为了保护用户安全，token是有时限的，默认用户是三天
-    var accessToken: String? = "2.00uAYETDxK1YXB9f69a8596bEEZzRC"
+    var accessToken: String? = "2.00uAYETDpFN57B8e5f0d2beb0PP3Ee"
     
     /// 专门负责拼接token的网络请求方法
     func tokenRequest(method: WBHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?,
@@ -72,6 +72,8 @@ class WBNetworkManager: AFHTTPSessionManager {
         let failure = { (task: URLSessionDataTask?, error: Error) -> () in
             
             // 针对403处理用户token过期
+            // 对于测试用户每天的刷新数量是有限的
+            // 超出上限，token会被锁定一段时间，需要新建一个应用程序
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("Token 过期了")
                 // FIXME: 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理)

@@ -18,7 +18,10 @@ class WBHomeViewController: WBBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        listViewModel.loadStatus{ (isSuccess) in
+        print("准备刷新，最后一条 \(self.listViewModel.statusList.last?.text)")
+        
+        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+            
             print("加载数据结束")
             
             // 结束刷新控件
@@ -28,7 +31,9 @@ class WBHomeViewController: WBBaseViewController {
             self.isPullup = false
             
             // 刷新表格
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
     }
     

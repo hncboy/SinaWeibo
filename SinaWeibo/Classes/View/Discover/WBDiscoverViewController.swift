@@ -14,7 +14,7 @@ class WBDiscoverViewController: WBBaseViewController {
         super.viewDidLoad()
 
         // 模拟 token 过期
-        //WBNetworkManager.shared.userAccount.access_token = "hello token"
+        WBNetworkManager.shared.userAccount.access_token = "hello token"
         print("修改了 token")
     }
 

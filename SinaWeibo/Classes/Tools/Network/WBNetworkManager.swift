@@ -45,10 +45,14 @@ class WBNetworkManager: AFHTTPSessionManager {
         completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool) -> ()) {
         
         // 处理token字典
-        // 0>判断token是否为nil，为nil直接返回
+        // 0>判断token是否为nil，为nil直接返回，程序执行过程中，一般 token 不会为 nil
         guard let token = userAccount.access_token else {
-            // FIEXME: 发送通知，提示用户登录
+            // 发送通知，提示用户登录
             print("没有token！需要登录")
+            
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: WBUserShouldLoginNotification),
+                object: nil)
             
             completion(nil, false)
             return
@@ -90,7 +94,10 @@ class WBNetworkManager: AFHTTPSessionManager {
             // 超出上限，token会被锁定一段时间，需要新建一个应用程序
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("Token 过期了")
-                // FIXME: 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理)
+                // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理)
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: WBUserShouldLoginNotification),
+                    object: "bad token")
             }
             
             print("网络请求错误 \(error)")

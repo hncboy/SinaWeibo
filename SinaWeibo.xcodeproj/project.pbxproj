@@ -18,6 +18,8 @@
 		FE9019D321EFEC0F005630D8 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019D221EFEC0F005630D8 /* WBOAuthViewController.swift */; };
 		FE9019D621F05A04005630D8 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019D521F05A04005630D8 /* WBUserAccount.swift */; };
 		FE9019D921F13DBD005630D8 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019D821F13DBD005630D8 /* WBTitleButton.swift */; };
+		FE9019DC21F149A7005630D8 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */; };
+		FE9019DE21F14A2B005630D8 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -58,6 +60,8 @@
 		FE9019D221EFEC0F005630D8 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		FE9019D521F05A04005630D8 /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		FE9019D821F13DBD005630D8 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
+		FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 		FE9019DA21F147D5005630D8 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
+				FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */,
+				FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -493,12 +499,14 @@
 				FEC154C721C53656007B9F5E /* NSArray+Log.m in Sources */,
 				FEC154A221C4D699007B9F5E /* WBBaseViewController.swift in Sources */,
 				FE9019D921F13DBD005630D8 /* WBTitleButton.swift in Sources */,
+				FE9019DC21F149A7005630D8 /* WBWelcomeView.swift in Sources */,
 				FE9019CC21CD08C3005630D8 /* WBStatus.swift in Sources */,
 				FEC154CF21C53656007B9F5E /* UILabel+CZAddition.m in Sources */,
 				FEC154C821C53656007B9F5E /* NSAttributedString+CZAdditon.m in Sources */,
 				FEC154D221C53656007B9F5E /* UIViewController+CZAddition.m in Sources */,
 				FEC154CA21C53656007B9F5E /* NSString+CZBase64.m in Sources */,
 				FEC154AA21C4D77F007B9F5E /* WBProfileViewController.swift in Sources */,
+				FE9019DE21F14A2B005630D8 /* WBNewFeatureView.swift in Sources */,
 				FEC154D921C6471F007B9F5E /* WBDemoViewController.swift in Sources */,
 				FEC154A821C4D773007B9F5E /* WBDiscoverViewController.swift in Sources */,
 				FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */,

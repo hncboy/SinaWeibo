@@ -101,7 +101,12 @@ class WBMainViewController: UITabBarController {
 extension WBMainViewController {
     
     /// 设置新特性视图
-    private func setupNewfeatureViews() {
+    func setupNewfeatureViews() {
+        
+        // 0.判断是否登录
+        if !WBNetworkManager.shared.userLogin {
+            return
+        }
         
         // 1.如果更新，显示新特性，否则显示欢迎
         let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView()

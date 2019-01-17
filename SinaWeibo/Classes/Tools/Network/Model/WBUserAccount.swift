@@ -18,7 +18,15 @@ class WBUserAccount: NSObject {
     /// 过期日期，单位秒
     /// 开发者 5 年
     /// 使用者 3 天
-    var expires_in: TimeInterval = 0.0
+    var expires_in: TimeInterval = 0.0 {
+        
+        didSet {
+            expireDate = Date(timeIntervalSinceNow: expires_in)
+        }
+    }
+    
+    /// 过期日期
+    var expireDate: Date?
     
     override var description: String {
         return yy_modelDescription()

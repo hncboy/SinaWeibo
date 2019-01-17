@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AFNetworking
+import SVProgressHUD
 import UserNotifications
 
 @UIApplicationMain
@@ -17,16 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        // #available 检测设备版本
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .carPlay, .sound]) { (success, error) in
-                print("授权 " + (success ? "成功" : "失败"))
-            }
-        } else {
-            // 取得用户授权显示通知[上方的提示条/声音/BadgeNumber]
-            let notifySettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(notifySettings)
-        }
+        // 设置应用程序额外设置
+        setupAdditions()
         
         sleep(2)
         window = UIWindow()
@@ -37,6 +31,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppInfo()
         
         return true
+    }
+}
+
+// MARK: - 设置应用程序的额外信息
+extension AppDelegate {
+    
+    func setupAdditions() {
+        
+        // 1.设置 SVProgresseHUD 最小解除时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        
+        // 2.设置网络加载指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        
+        // 3.设置用户授权显示通知
+        // #available 检测设备版本
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .carPlay, .sound]) { (success, error) in
+                print("授权 " + (success ? "成功" : "失败"))
+            }
+        } else {
+            // 取得用户授权显示通知[上方的提示条/声音/BadgeNumber]
+            let notifySettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notifySettings)
+        }
     }
 }
 

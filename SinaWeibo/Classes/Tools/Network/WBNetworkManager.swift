@@ -32,15 +32,12 @@ class WBNetworkManager: AFHTTPSessionManager {
         return instance
     }()
     
-    /// 访问令牌，所有的网络请求，都基于此令牌(登录除外)
-    /// 为了保护用户安全，token是有时限的，默认用户是三天
-    var accessToken: String? = "2.00uAYETDpFN57Bec46ea6226kKSh1B"
-    /// 用户微博id
-    var uid: String? = "3177996304"
+    /// 用户账户的懒加载属性
+    lazy var userAccount = WBUserAccount()
     
     /// 用户登录标记[计算型属性]
     var userLogin: Bool {
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     
     /// 专门负责拼接token的网络请求方法
@@ -49,7 +46,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         // 处理token字典
         // 0>判断token是否为nil，为nil直接返回
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             // FIEXME: 发送通知，提示用户登录
             print("没有token！需要登录")
             

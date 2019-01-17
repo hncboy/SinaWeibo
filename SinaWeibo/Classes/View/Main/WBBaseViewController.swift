@@ -39,10 +39,21 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        
         WBNetworkManager.shared.userLogin ? loadData() : ()
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSuccess),
+            name: NSNotification.Name(rawValue: WBUserLoginSuccessedNotification),
+            object: nil)
     }
 
+    deinit {
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     /// 重写title的setter方法
     override var title: String? {
         
@@ -69,6 +80,18 @@ extension WBBaseViewController {
     
     func register() {
         print("用户注册")
+    }
+    
+    func loginSuccess(n: Notification) {
+        print("登录成功 \(n)")
+        
+        // 更新 ui -> 将访客视图替换为表格视图
+        // 需要重新设置 view
+        // 在访问 view 的 getter 时，如果 view == nil 会调用 loadView -> viewDidLoad
+        view = nil
+        
+        // 注销通知 -> 重新执行 viewDidLoad 会再次注册，避免通知被重复注册
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

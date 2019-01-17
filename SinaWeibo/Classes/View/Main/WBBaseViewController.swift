@@ -85,6 +85,10 @@ extension WBBaseViewController {
     func loginSuccess(n: Notification) {
         print("登录成功 \(n)")
         
+        // 登录前左边是注册，右边是登录
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
         // 更新 ui -> 将访客视图替换为表格视图
         // 需要重新设置 view
         // 在访问 view 的 getter 时，如果 view == nil 会调用 loadView -> viewDidLoad
@@ -123,6 +127,9 @@ extension WBBaseViewController {
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
+        
+        // 修改指示器的缩进 - 强行解包是为了拿到一个必有得 inset
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         // 设置刷新控件
         // 1>实例化控件

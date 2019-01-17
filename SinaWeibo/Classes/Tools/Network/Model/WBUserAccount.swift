@@ -51,6 +51,7 @@ class WBUserAccount: NSObject {
         }
         
         // 2>使用字典设置属性值
+        // *** 用户是否登录的关键代码
         yy_modelSet(with: dict ?? [:])
         print("从沙盒加载用户信息 \(self)")
         

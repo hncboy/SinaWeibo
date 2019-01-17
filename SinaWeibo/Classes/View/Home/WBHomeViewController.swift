@@ -83,14 +83,11 @@ extension WBHomeViewController {
     /// 设置导航栏标题
     private func setupNavTitle() {
         
-        let button = UIButton.cz_textButton("hncboy", fontSize: 17, normalColor: UIColor.darkGray, highlightedColor: UIColor.black)
-        
-        button?.setImage(UIImage(named: "navigationbar_arrow_down"), for: [])
-        button?.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
+        let title = WBNetworkManager.shared.userAccount.screen_name
+        let button = WBTitleButton(title: title)
         
         navItem.titleView = button
-        
-        button?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
     }
     
     @objc func clickTitleButton(btn: UIButton) {

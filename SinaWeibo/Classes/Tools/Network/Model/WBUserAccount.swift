@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let accountFile: NSString = "useraccount.json"
+
 /// 用户账户信息
 class WBUserAccount: NSObject {
 
@@ -32,6 +34,15 @@ class WBUserAccount: NSObject {
         return yy_modelDescription()
     }
     
+    override init() {
+        super.init()
+        
+        // 从磁盘加载保存的文件 -> 字典
+        
+        
+        // 使用字典设置属性值
+    }
+    
     /**
      1.偏好设置（小）- Xcode 8 beta 无效
      2.沙盒 - 归档/plist/json
@@ -48,7 +59,7 @@ class WBUserAccount: NSObject {
         
         // 2.字典序列化data
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-            let filePath = ("useraccount.json" as NSString).cz_appendDocumentDir() else {
+            let filePath = accountFile.cz_appendDocumentDir() else {
                 
             return
         }

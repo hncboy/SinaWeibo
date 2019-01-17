@@ -38,9 +38,16 @@ class WBUserAccount: NSObject {
         super.init()
         
         // 从磁盘加载保存的文件 -> 字典
+        // 1>加载磁盘文件到二进制数据，如果失败直接返回
+        guard let path = accountFile.cz_appendDocumentDir(),
+            let data = NSData(contentsOfFile: path),
+        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
+                return
+        }
         
-        
-        // 使用字典设置属性值
+        // 2>使用字典设置属性值
+        yy_modelSet(with: dict ?? [:])
+        print("从沙盒加载用户信息 \(self)")
     }
     
     /**

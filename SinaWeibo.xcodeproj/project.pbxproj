@@ -181,6 +181,13 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
+		FE9019DA21F147D5005630D8 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		FEC1546B21C26817007B9F5E = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +280,7 @@
 		FEC1549921C4D59B007B9F5E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE9019DA21F147D5005630D8 /* NewFeature */,
 				FE9019D121EFEBC2005630D8 /* oAuth */,
 				FEC154D721C646EF007B9F5E /* 测试 */,
 				FE9019A221C91456005630D8 /* 主控制器 */,

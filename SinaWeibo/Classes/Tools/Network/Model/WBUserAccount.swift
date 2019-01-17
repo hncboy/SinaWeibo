@@ -41,13 +41,30 @@ class WBUserAccount: NSObject {
         // 1>加载磁盘文件到二进制数据，如果失败直接返回
         guard let path = accountFile.cz_appendDocumentDir(),
             let data = NSData(contentsOfFile: path),
-        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
                 return
         }
         
         // 2>使用字典设置属性值
         yy_modelSet(with: dict ?? [:])
         print("从沙盒加载用户信息 \(self)")
+        
+        // 3>判断token是否过期
+        // 测试过期日期 - 开发中每一个分支都需要测试
+        // expireDate = Date(timeIntervalSinceNow: -3600 * 24)
+        // print(expireDate)
+        
+        if expireDate?.compare(Date()) != .orderedDescending {
+            print("账户过期")
+            
+            // 清空token
+            access_token = nil
+            uid = nil
+            
+            // 删除账户文件
+            _ = try? FileManager.default.removeItem(atPath: path)
+        }
+
     }
     
     /**

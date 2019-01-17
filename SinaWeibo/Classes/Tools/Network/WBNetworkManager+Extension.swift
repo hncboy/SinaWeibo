@@ -56,7 +56,7 @@ extension WBNetworkManager {
 
 // MARK: - oAuth相关方法
 extension WBNetworkManager {
-    
+     
     /// 加载AccessToken
     func loadAccessToken(code: String) {
         
@@ -68,8 +68,9 @@ extension WBNetworkManager {
                       "code": code,
                       "redirect_uri": WBRedirectURI]
         
+        // 发起网络
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            print(json)
+            print("json \(json)")
         }
     }
 }

@@ -98,6 +98,8 @@ extension WBOAuthViewController: UIWebViewDelegate {
         let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
         print("授权码 - \(code)")
         
+        // 4.使用授权码获取[换取]AccessToken
+        WBNetworkManager.shared.loadAccessToken(code: code)
         return false
     }
     

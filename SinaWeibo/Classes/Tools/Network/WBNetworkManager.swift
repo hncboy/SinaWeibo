@@ -20,11 +20,21 @@ class WBNetworkManager: AFHTTPSessionManager {
 
     /// 静态区/常量/闭包
     /// 在第一次访问时，执行闭包，并且将结果保存在shared常量中
-    static let shared = WBNetworkManager()
+    static let shared: WBNetworkManager = {
+        
+        // 实例化对象
+        let instance = WBNetworkManager()
+        
+        // 设置响应反序列化支持的数据类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        // 返回对象
+        return instance
+    }()
     
     /// 访问令牌，所有的网络请求，都基于此令牌(登录除外)
     /// 为了保护用户安全，token是有时限的，默认用户是三天
-    var accessToken: String? //= "2.00uAYETDpFN57B8e5f0d2beb0PP3Ee"
+    var accessToken: String? = "2.00uAYETDpFN57Bec46ea6226kKSh1B"
     /// 用户微博id
     var uid: String? = "3177996304"
     

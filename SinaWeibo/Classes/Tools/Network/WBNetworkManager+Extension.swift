@@ -34,7 +34,7 @@ extension WBNetworkManager {
         }
     }
     
-    /// 返回新浪微博的未读数量
+    /// 返回新浪微博的未读数量 - 定时刷新
     func unreadCount(completion: @escaping (_ count: Int) -> ()) {
         
         guard let uid = userAccount.uid else {
@@ -58,7 +58,10 @@ extension WBNetworkManager {
 extension WBNetworkManager {
      
     /// 加载AccessToken
-    func loadAccessToken(code: String) {
+    ///
+    /// - parameter code: 授权码
+    /// - parameter completion: 完成回调[是否回调]
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool)->()) {
         
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
@@ -70,13 +73,17 @@ extension WBNetworkManager {
         
         // 发起网络
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            print("json")
+            //print("json")
             
+            // 如果请求失败，对用户账户数据不会有任何影响
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
             print(self.userAccount)
             
             // 保存模型
             self.userAccount.saveAccount()
+            
+            // 完成回调
+            completion(isSuccess)
         }
     }
 }

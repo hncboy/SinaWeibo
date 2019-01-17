@@ -70,7 +70,10 @@ extension WBNetworkManager {
         
         // 发起网络
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            print("json \(json)")
+            print("json")
+            
+            self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            print(self.userAccount)
         }
     }
 }

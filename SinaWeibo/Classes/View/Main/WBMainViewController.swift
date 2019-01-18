@@ -109,11 +109,9 @@ extension WBMainViewController {
         }
         
         // 1.如果更新，显示新特性，否则显示欢迎
-        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView()
+        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView.welcomeView()
         
         // 2.添加视图
-        v.frame = view.bounds
-        
         view.addSubview(v)
     }
     

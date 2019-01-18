@@ -20,6 +20,7 @@
 		FE9019D921F13DBD005630D8 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019D821F13DBD005630D8 /* WBTitleButton.swift */; };
 		FE9019DC21F149A7005630D8 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */; };
 		FE9019DE21F14A2B005630D8 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */; };
+		FE9019E221F15BBE005630D8 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9019E121F15BBE005630D8 /* WBWelcomeView.xib */; };
 		FEC1547821C26817007B9F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1547721C26817007B9F5E /* AppDelegate.swift */; };
 		FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1547E21C26817007B9F5E /* Assets.xcassets */; };
 		FEC1549E21C4D618007B9F5E /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1549D21C4D618007B9F5E /* WBMainViewController.swift */; };
@@ -62,6 +63,7 @@
 		FE9019D821F13DBD005630D8 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
+		FE9019E121F15BBE005630D8 /* WBWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		FEC1547421C26817007B9F5E /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC1547721C26817007B9F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC1547E21C26817007B9F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				FE9019DB21F149A7005630D8 /* WBWelcomeView.swift */,
 				FE9019DD21F14A2B005630D8 /* WBNewFeatureView.swift */,
+				FE9019E121F15BBE005630D8 /* WBWelcomeView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			files = (
 				FE9019A721CB86D2005630D8 /* main.json in Resources */,
 				FEC1547F21C26817007B9F5E /* Assets.xcassets in Resources */,
+				FE9019E221F15BBE005630D8 /* WBWelcomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@
                         <constraint firstAttribute="width" constant="85" id="sYG-D7-rJg"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzx-vz-WJy">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzx-vz-WJy">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -38,6 +38,11 @@
                 <constraint firstItem="pzx-vz-WJy" firstAttribute="top" secondItem="bJi-Ts-I3o" secondAttribute="bottom" constant="26" id="ofc-GV-rKg"/>
                 <constraint firstAttribute="trailing" secondItem="D1Q-V7-B6t" secondAttribute="trailing" id="zfu-Wh-TCX"/>
             </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="D8a-jv-s0t" id="bju-I3-lY0"/>
+                <outlet property="iconView" destination="bJi-Ts-I3o" id="5FZ-aQ-Hxq"/>
+                <outlet property="tipLabel" destination="pzx-vz-WJy" id="unE-zN-uuu"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="111.5"/>
         </view>
     </objects>

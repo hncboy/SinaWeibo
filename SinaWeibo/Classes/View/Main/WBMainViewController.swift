@@ -129,10 +129,20 @@ extension WBMainViewController {
      */
     private var isNewVersion: Bool {
         // 1.取当前的版本号 1.0.2
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        print("当前版本" + currentVersion)
+        
         // 2.取保存在 Document（iTunes备份）目录中的之前版本 1.0.2
+        let path = ("version" as NSString).cz_appendDocumentDir()
+        let sandboxVersion = (try? String(contentsOfFile: path!)) ?? ""
+        print("沙盒版本" + sandboxVersion)
+        print(path)
+        
         // 3.将当前版本号保存在沙盒 1.0.2
+        _ = try? currentVersion.write(toFile: path!, atomically: true, encoding: .utf8)
+        
         // 4.返回两个版本号 是否一致 not now
-        return true
+        return currentVersion != sandboxVersion
     }
 }
 
